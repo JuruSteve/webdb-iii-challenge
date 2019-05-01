@@ -6,8 +6,7 @@ exports.seed = function (knex, Promise) {
       // Inserts seed entries
       return knex('students').insert([
         { name: 'student A' },
-        { name: 'student B' },
-        { name: 'student C' }
+        { name: 'student B' }
       ])
     })
-};
+}

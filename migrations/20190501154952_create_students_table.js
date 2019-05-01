@@ -3,9 +3,8 @@ exports.up = function (knex, Promise) {
   return knex.schema.createTable('students', tbl => {
     tbl.increments()
     tbl.string('name', 128).notNullable()
-    tbl
-      .integer('cohort_id')
-      .unsigned()
+    tbl.integer('cohort_id', 11).unsigned()
+    tbl.foreign('cohort_id')
       .references('id')
       .inTable('cohorts')
       .onDelete('CASCADE')
